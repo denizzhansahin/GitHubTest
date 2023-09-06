@@ -1,0 +1,20 @@
+git --version : Versiyon öğrenme
+ls : dizini listeleme
+pwd : bulunulan dizin yolu
+cd .. : Geri gitme
+cd dizin_adi : dizin_adi içine gitmek
+clear : terminal silmek
+mkdir dizin_adi : dizin_adi olarak klasör oluştur
+touch dosya.txt : not.txt oluştur
+rm dosya.txt : dosya.txt silme işlemi
+rm -rf dizin_adi : dizin_adi klasörü silmek
+
+KullanıcıAdi ve Email kaydetmek:
+git config --global user.name "Denizhan SAHİN"
+git congig user.name
+git config --global user.email 16008121013@ogr.bozok.edu.tr 
+git config user.email
+
+Default Editör Değiştirmek:
+VİM denilen editör default olmaktadır.
+git config --global core.editor "code --wait"

@@ -1,0 +1,66 @@
+GitHub Nedir?:
+Git ile çalışan bir sistem. İnternet sitesi, proje yönetimi avantajları.
+
+GitHub Profilleri:
+Kişiye ait bilgilerin yer aldığı bölümler.
+
+Git Push:
+git remote add isim link : Bir GitHub linkine göre Git ayarlar, isim ile 
+git push -u origin master : push eder, master için origin'e
+git push  origin master : push eder
+git push : push eder, hiç sormadan
+git remote : remote edilecek GitHub için
+git push orogin feat : origin için feat ekle
+451  mkdir GitHubTest
+  452  cd GitHubTest/
+  453  git init
+  454  touch test.txt
+  455  git add .
+  456  git commit -m "test dosyası oluşturuldu."
+  457  git log
+  458  git remote add origin https://github.com/denizzhansahin/GitHubTest.git
+  459  git push -u origin main
+  460  git push -u origin master
+  461  git config 
+  462  git config --user.name Denizhan Şahin
+  463  git config --global user.name Denizhan Şahin
+  464  git config --global user.email denizhansahin@yaani.com
+  465  git push -u origin master
+  466  git remote add origin https://github.com/denizzhansahin/GitHubTest.git
+  467  git push -u origin master
+  468  git log
+  469  git add .
+  470  git commit -m "ikinci commit."
+  471  git push -u origin master
+  472  git push
+  473  git branch feat
+  474  git switch feat
+  475  touch ikinci.txt
+  476  git add .
+  477  git commit -m "ikinci branchdeyiz."
+  478  git branch
+  479  git remote
+  480  git push origin fear
+  481  git push origin feat
+
+Pull Reauest:
+GitHub reposu üzerindeki commitleri, merge yapma işlemlerini belirtir.
+
+Fetch ve Pull:
+GitHub ve Git ile senkronize işlemleri yapılır.
+git branch -r : remote branchleri belirtir.
+git fetch : al getir.
+git fetch origin master : origin üzerindeki master gelir
+git checkout orogin/master : remote branch'e giriş olur.
+git pull = git fetch + git merge
+
+Git Clone:
+git clone link. : clonela
+fork : GitHub hesabına forklar.
+
+Private:
+Gizli repolar
+
+Action: DevOps işlemleri için
+Projects : Projeler için
+READ.MD : mark down

@@ -1,0 +1,127 @@
+Head:
+Projenin ilk ve ana adımları
+master : ana branch
+Birden fazla kişi veya ekip için projeyi ayrı ayrı devam ettirmek
+bu branchler sonradan commit ile birleşebilir
+feat : master dışındaki branch 
+
+MERGE:
+Dallanan branchleri birleştirmek, ana branch üzerinde birleştirmek 
+git branch : güncel branchleri gosterir 
+git branch isim_ad : bir branch oluşturur
+git switch isim_ad : bir branch seçilir
+git merge isim_Ad : master ile istenilen commit merge yapılır
+ 188  touch deneysel.txt
+  189  git add .
+  190  git commit -m "ilk satır deneyseller yazıldı."
+  191  git log
+  192  git add çü
+  193  git add .
+  194  git commit -m "ikinci deneysel satır."
+  195  git log
+  196  git branch
+  197  git switch master 
+  198  git branch 
+  199  git add .
+  200  git commit -m "bugün öğrenilenler yazıldı."
+  201  git switch feature 
+  202  git add .
+  203  git commit -m "tamam2."
+  204  git switch master 
+  205  git add .
+  206  git commit -m "bugün öğrenciler yazıldı."
+  207  git add .
+  208  git commit -m "son commit yazıldı."
+  209  git log
+  210  git switch feature 
+  211  git switch master 
+  212  git merge feature 
+  213  git log
+
+
+Fast Marge:
+bazı durumlarda çakışma olabilir.
+masterda hiçbir değişiklil yok ama feat içeri alınırsa bu denir.
+215  git branch arkakapak
+  216  git branch 
+  217  git switch arkakapak 
+  218  git branch 
+  219  touch kapakyazisi.txt
+  220  git add .
+  221  git commit -m "arka kapak ilk saitr yazildi."
+  222  g,
+  223  git add .
+  224  git commit -m "arka kapak yazısı güçlendirildi."
+  225  git log
+  226  git switch master 
+  227  git log
+  228  git merge arkakapak 
+  229  git log
+  230  git switch master 
+  231  history 
+
+
+Merge Conflict:
+her iki durumda branchlerde yapılanlar çakışabilir.
+it merge arkakapak 
+ÇAKIŞMA (değiştir/sil): ilkbolum.txt silindi (HEAD içinde) ve arkakapak içinde değiştirildi. arkakapak sürümü (şunun: ilkbolum.txt) ağaçta bırakıldı.
+Otomatik birleştirme başarısız; çakışmaları çözün ve sonucu işleyin.
+233  mkdit JavaKitabi
+  234  mkdir JavaKitabi
+  235  cd JavaKitabi/
+  236  git status 
+  237  git init
+  238  touch ilkbolum.txt
+  239  git status
+  240  git add .
+  241  git commit -m "giriş cümlesi yazildi."
+  242  git branch arkakapak
+  243  git switch arkakapak 
+  244  git add .
+  245  git commit -m "arkakapak yazildi."
+  246  git switch master 
+  247  rm ilkbolum.txt 
+  248  touch bolum1.txt
+  249  git add .
+  250  git commit -m "ilk bolum tekrar yazıldı."
+  251  git merge arkakapak 
+  252  git status 
+  253  git commit -m "merge conflict çözüldü."
+  254  git status
+  255  git branch 
+  256  git log
+  257  touch ornek.java
+  258  git add .
+  259  git commit -m "email eklendi."
+  260  git branch feat
+  261  git switch feat 
+  262  git add .
+  263  git commit -m "email değiştirildi."
+  264  git switch master 
+  265  git add ç
+  266  git add .
+  267  git merge feat 
+  268  git commit -m "email silindi"
+  269  git merge feat 
+  270  git status
+  271  git commit -a
+  272  git add .
+  273  git commit -m "merge conflict çözüldü."
+  274  git merge feat
+  275  git log
+
+Stash:
+Genellikle biten çalışmalar için commit eder.
+bir branch'den diğer branch'e giderken oluşacak durumlar
+kendi içinde git saklar, sonra bunlar alınır
+
+Pop:
+git stash : sakla 
+git stash pop : saklanan geri gelsin
+git stash list : saklanan listesi
+denshn@pardus-nirvana-nb-s500-silver:~/Masaüstü/Git-GitHub-BTK_akademi/JavaKitabi$ git stash list
+stash@{0}: WIP on esktrabolumler: 39476cb ornek integer olusturuldu.
+denshn@pardus-nirvana-nb-s500-silver:~/Masaüstü/Git-GitHub-BTK_akademi/JavaKitabi$ git stash apply stash@{0}
+git stash apply stash@{0} : istenen geri alınır 
+git stash clear : bütün stashler silinir 
+git stash apply : uygula değişiklikleri

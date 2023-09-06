@@ -1,0 +1,10 @@
+python kitabı
+
+ön söz  : bu kitap çok güzel olacak, hepimiz python öğreneceğiz
+
+il bölüm : değişkener ve veri tipleri.
+değişkenler çok önemlidir.
+
+bugün brancleri ogrnendik
+
+son commit

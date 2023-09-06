@@ -1,0 +1,127 @@
+Checkout:
+git restore dosya_adi : geriye dön, commit öncesi
+git checkout commit_id : istenilen commite dön id bilgisi ile : git checkout c67f1a79d532fe30aec8f20e941c5005cd595e04
+335  mkdir KotlinKitabi
+  336  cd KotlinKitabi/
+  337  git status 
+  338  git init
+  339  touch giris.txt
+  340  git status
+  341  git add .,
+  342  git add .
+  343  git commit -m "mesaj eklendi."
+  344  git restore giris.txt 
+  345  git add .
+  346  git commit -m "web bilgi eklendi."
+  347  git log
+  348  touch ilkbolum.txt
+  349  git status
+  350  git add .
+  351  git commit -m "ilk bolum yazıldı."
+  352  git log
+  353  git checkout c67f1a79d532fe30aec8f20e941c5005cd595e04
+  354  git log
+  355  git branch 
+  356  git switch master 
+  357  git checkout c67f1a79d532fe30aec8f20e941c5005cd595e04
+  358  git branch feat
+  359  git branch 
+  360  git switch feat 
+  361  git switch master 
+  362  git branch 
+  363  git switch feat 
+  364  git add .
+  365  git commit -m "giris tamamlandi."
+  366  git log
+  367  git switch M
+  368  git switch master 
+  369  git log
+
+Reset vs Revert:
+eski bir commite don ama yenileri sil
+git reset commit_id : eskiye git, yeni commit sil
+reset --hard var ise yine aynısı ama kalıcı olur.
+revert : eskiyi sil ama devam et, geri al ama devam et,eskiden devam et ama eskiler log'da dursun amaçlansın
+374  git branch 
+  375  git log
+  376  git add .
+  377  git commit -m "dorduncu commit."
+  378  git add .
+  379  git commit -m "besinci commit."
+  380  git add .
+  381  git commit -m "altinci commit."
+  382  git log
+  383  git reset cb2253f11de23baf0961079540f3ce3483dee19b
+  384  git log
+  385  git add .
+  386  git commit -m "besinci commit."
+  387  git add .
+  388  git commit -m "alitinci commit."
+  389  git reset --hard cb2253f11de23baf0961079540f3ce3483dee19b
+  390  git add .
+  391  git commit -m "besinci yenidenç."
+  392  git add .
+  393  git commit -m "altinci yeniden."
+  394  git log
+  395  git revert 1167ee821d12e608538a0fbf8ca360af14c3d171
+  396  git log
+  397  git revert 2acc7186b151d9511d61459cf936f0fa27bdd721
+
+Git Diff:
+İki commit arasındaki farklar
+difference, farkları göster
+git diff : tek başına çalışırsa sadece git add öncesi güncel dosyadaki farklar gözükür
+git diff HEAD : son commit değişiklikleri ,commit öncesi
+aşağıdaki iki commit arası farkı gösterir:
+git diff 61ace0837a02ef93b9408c098c57aefd9b5becd9 92bc39f01c074bb65b8ef5400d030d4ddfa81a7f
+aradaki boşluk yerine : kullanmak gerekebilir
+git diff branch_adi : iki branch arası fark, diğer branch ile
+ 402  git log
+  403  git diff
+  404  git staT
+  405  git status 
+  406  git diff
+  407  git add .
+  408  git diff
+  409  git diff HEAD
+  410  git log
+  411  git diff 61ace0837a02ef93b9408c098c57aefd9b5becd9 92bc39f01c074bb65b8ef5400d030d4ddfa81a7f
+  412  git diff feat
+
+Rebase:
+Bazı değiştir. Master'dan alınan ve geliştirilen ayrı bir branch var. Ama master'a ise yeni bir commit geldi. Bunu kendi branch'ine ekle
+Onların üstüne yazıp et, feat master'a ekle, master feat'e değil. çok merge commit oldu, kirlendi ama kirlenmesine gerek yok
+aradaki erge commitlerden kurtur, sıraya bak,tarihlerin sıkıntı olması durumlarına bak, daha önce paylaşım yapılmamaış ise kullanılır gibi ama dikkat et 
+416  mkdir RebaseTestProjesi
+  417  cd RebaseTestProjesi/
+  418  git status
+  419  git init
+  420  touch birinci.txt
+  421  touch ikinci.txt
+  422  git add .
+  423  git commit -m "master ilk commit."
+  424  git log
+  425  git add .
+  426  git commit -m "master ikinci commit."
+  427  git branch feat
+  428  git branch
+  429  git switch feat 
+  430  git add .
+  431  git commit -m "feat'in ilk commiti"
+  432  git status 
+  433  git switch master 
+  434  git add .
+  435  git commit -m "mastera üçüncü commit atıldı."
+  436  git switch feat 
+  437  git log
+  438  git merge master
+  439  git log
+  440  git add .
+  441  git commit -m "feat iknci satır eklendi."
+  442  git log
+  443  git branch
+  444  g,t 
+  445  git rebase master
+  446  git log
+
+  

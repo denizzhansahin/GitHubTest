@@ -1,0 +1,47 @@
+Git Görselleştirme:
+HEAD : son commit,
+MASTER: Ana commit 
+commit : kendi adamak İng anlamı, yapılan değişiklikleri kaydetmek, bir işin tamamlanması
+branch : aynı anda bir poje üzerinde çalışmak, farklı farklı commit atmak, projenin dallanmaası, yapılan değişiklikler daha sonra bir commit altında birleşebilir
+Çalışma Klasörü : proje dosyası
+git add : yapılırsa Index-Staging oluşturur
+git commit : işin tamamlanması : Local Repository ile işlemler kaydedilir.
+
+Git init ve Status:
+git status : güncel git durumu
+git init : ilgili klasöre git entegre etmek, sadece bir kez çalışma yeter
+ls -la : gizli klasörlerde gözükür
+.git gizli klasörü silinirse tüm Git bilgisi gider
+
+İlk Commit:
+git add ile eklenir,
+git commit -m "ornek and ilkdefter olusturuldu." : bir mesaj ile commit atar
+git log : detaylar var
+Örnek kodlar:
+111  mkdir GitKursu
+  112  cd GitKursu/
+  113  git status 
+  114  git init
+  115  git status
+  116  ls -la
+  117  touch ilkdefter.txt
+  118  touch ornek.py
+  119  git status
+  120  git add ilkdefter.txt 
+  121  git add ornek.py 
+  122  git status
+  123  git commit -m "ornek and ilkdefter olusturuldu."
+  124  git status
+  125  git log
+
+Git Log :
+git log : yapılan bilgiler log olarak tutulur.
+git commit -a : dosyayı commit yaparak add yapar 
+git add . : ile tüm dosyaları için kayıtetme yapılır.
+git add deneme.py : bir dosya için kayedtmek yapılır 
+
+
+Gitignore:
+görmezden gelnmesi gereken klasör
+touch .gitignore oluştur ve içine gizlenmesini istediğin dosyayı yaz
+git log'dan çıkmak için q tuşuna bas 
